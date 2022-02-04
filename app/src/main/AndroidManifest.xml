@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.liza_jobtest">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Liza_jobTest">
+        <activity
+            android:name=".Activity_web"
+            android:exported="false"
+            android:screenOrientation="fullSensor"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <!--android:screenOrientation - позволяет Активити поворачиваться-->
+            <!--android:configChanges - Чтобы страница при смене ориентации не перезагружалась-->
+
+            <intent-filter>
+                <action android:name="AWeb" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity_randomizer"
+            android:exported="false"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="ARandomizer" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity_start"
+            android:exported="false"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="AStart" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
