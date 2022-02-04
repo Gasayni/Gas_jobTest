@@ -7,11 +7,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Activity_randomizer extends AppCompatActivity implements View.OnClickListener {
 
     Button btn_start_rand;
-    Button btn_stop_rand;
+    Button btn_score_rand;
     ImageView myImageView;
 
     @Override
@@ -21,8 +22,8 @@ public class Activity_randomizer extends AppCompatActivity implements View.OnCli
 
         btn_start_rand = findViewById(R.id.btn_start_rand);
         btn_start_rand.setOnClickListener(this);
-        btn_stop_rand = findViewById(R.id.btn_stop_rand);
-        btn_stop_rand.setOnClickListener(this);
+        btn_score_rand = findViewById(R.id.btn_score_rand);
+        btn_score_rand.setOnClickListener(this);
 
         myImageView = findViewById(R.id.image_wheel);
     }
@@ -35,12 +36,13 @@ public class Activity_randomizer extends AppCompatActivity implements View.OnCli
                 final Animation animationRotateCenter = AnimationUtils.loadAnimation(
                         this, R.anim.rotate_center);
                 myImageView.startAnimation(animationRotateCenter);
-
+                StopWatch.start();
                 break;
-            case R.id.btn_stop_rand:
-                final Animation animationRotateCenter1 = AnimationUtils.loadAnimation(
-                        this, R.anim.stop_rotate_center);
-                myImageView.startAnimation(animationRotateCenter1);
+            case R.id.btn_score_rand:
+                // считаем попавшийся сегмент, загоняя туда секундомер
+                int segment_number = Solution_wheel.sulution(StopWatch.stop());
+                Toast toast = Toast.makeText(getApplicationContext(),segment_number,Toast.LENGTH_SHORT);
+                toast.show();
                 break;
             default: break;
         }

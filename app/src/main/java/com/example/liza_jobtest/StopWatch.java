@@ -1,53 +1,25 @@
 package com.example.liza_jobtest;
 
+// Класс Секундомер
+// Вызывается метод start - когда нужно запустить секундомер
+// и метод stop - когда нужно остановить секундомер
+
+// Метод stop останавливает секундомер и возвращает количество милисекунд в формате long
+
+import java.util.Date;
+
 public class StopWatch {
-}
+    private static Date time_start, time_end;
+    private static long result;
 
-
-
-
-
-
-
-
-
-
-
-
-public class Stopwatch {
-
-    private final long start;
-
-
-    public Stopwatch() {
-        start = System.currentTimeMillis();
+    public static void start() {
+        time_start = new Date();
     }
 
-    public double elapsedTime() {
-        long now = System.currentTimeMillis();
-        return (now - start) / 1000.0;
-    }
+    public static long stop() {
+        time_end = new Date();
+        result = time_end.getTime() - time_start.getTime();
 
-
-    public static void main(String[] args) {
-        int n = Integer.parseInt(args[0]);
-
-        // sum of square roots of integers from 1 to n using Math.sqrt(x).
-        Stopwatch timer1 = new Stopwatch();
-        double sum1 = 0.0;
-        for (int i = 1; i <= n; i++) {
-            sum1 += Math.sqrt(i);
-        }
-        double time1 = timer1.elapsedTime();
-        System.out.println(sum1 + "e (" + time1 + ".2f seconds)\n");
-
-        // sum of square roots of integers from 1 to n using Math.pow(x, 0.5).
-        Stopwatch timer2 = new Stopwatch();
-        double sum2 = 0.0;
-        for (int i = 1; i <= n; i++) {
-            sum2 += Math.pow(i, 0.5);
-        }
-        double time2 = timer2.elapsedTime();
-        System.out.println(sum2+ "e (" + time2 + ".2f seconds)\n");
+        return result;
     }
 }

@@ -15,7 +15,7 @@
             android:id="@+id/image_wheel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/wheel" />
+            app:srcCompat="@drawable/wheel1" />
     </TableRow>
 
     <TableRow
@@ -31,11 +31,11 @@
             android:text="@string/start" />
 
         <Button
-            android:id="@+id/btn_stop_rand"
+            android:id="@+id/btn_score_rand"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="@string/stop" />
+            android:text="@string/score" />
     </TableRow>
 
 </TableLayout>
