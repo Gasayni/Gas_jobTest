@@ -3,13 +3,13 @@
     android:interpolator="@android:anim/linear_interpolator" >
 
     <rotate
-        android:duration="1000"
-        android:fromDegrees="0"
+        android:duration="0"
+        android:fromDegrees="231.42857"
         android:pivotX="50%"
         android:pivotY="50%"
         android:startOffset="0"
-        android:toDegrees="360"
-        android:repeatCount="infinite" />
+        android:toDegrees="231.42857"
+        android:repeatCount="infinite"/>
     <!--duration - Период анимации -->
     <!--fromDegrees - Начальный угол -->
     <!--pivotX, pivotY - центр вращения -->
