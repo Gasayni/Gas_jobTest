@@ -24,9 +24,9 @@ public class Activity_web extends AppCompatActivity {
         WebView webView = findViewById(R.id.webView);
 
         webView.getSettings().setJavaScriptEnabled(true);
-//        webView.loadUrl("https://fridaychips.ru/VPwhkG5d");
+        webView.loadUrl("https://fridaychips.ru/VPwhkG5d");
 //        webView.loadUrl("https://www.cbr.ru/scripts/XML_daily.asp?date_req=02/03/2002");
-        webView.loadUrl("https://www.youtube.com");
+//        webView.loadUrl("https://www.youtube.com");
 
 
         WebViewClient webViewClient = new WebViewClient() {

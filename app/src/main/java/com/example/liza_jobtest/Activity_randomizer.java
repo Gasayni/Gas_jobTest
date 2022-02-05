@@ -32,10 +32,10 @@ public class Activity_randomizer extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        int segment_number=0;
+        int segment_number;
         Animation animationRotateCenter;
         Animation animationRotateCenter1 = AnimationUtils.loadAnimation(
-                this, R.anim.stop_rotate_center_5);;
+                this, R.anim.stop_rotate_center_5);
 
 
         switch (v.getId()) {
@@ -92,7 +92,6 @@ public class Activity_randomizer extends AppCompatActivity implements View.OnCli
                 Toast toast = Toast.makeText(getApplicationContext(),s_segment_number,Toast.LENGTH_SHORT);
                 toast.show();
                 break;
-            default: break;
         }
     }
 }
