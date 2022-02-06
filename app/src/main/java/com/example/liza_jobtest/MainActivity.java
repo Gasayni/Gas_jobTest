@@ -8,34 +8,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button btn_startView;
-    Button btn_webView;
+public class MainActivity extends AppCompatActivity{
+    private static final int a = (int) (Math.random() * 2);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        btn_startView = findViewById(R.id.btb_startView);
-        btn_startView.setOnClickListener(this);
-        btn_webView = findViewById(R.id.btn_webView);
-        btn_webView.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
         Intent intent;
-        switch (v.getId()) {
-            case R.id.btb_startView:
-                intent = new Intent("AStart");
-                startActivity(intent);
-                break;
-            case R.id.btn_webView:
-                intent = new Intent("AWeb");
-                startActivity(intent);
-                break;
-            default: break;
+        if (a==1){
+            intent = new Intent("AStart");
+            startActivity(intent);
+        } else {
+            intent = new Intent("AWeb");
+            startActivity(intent);
         }
     }
 }
